@@ -3,9 +3,13 @@
 <div>
   <% url = 'https://catalog.gmu.edu/ribbit/?page=getprogram.rjs&code=*' %>
   <% response = Nokogiri::XML(open(url)) %>
-
+  <% codes = [] %>
   <% response.xpath('programinfo/program').each do |program| %>
-    <% code = program.attribute('code') %>
-    <%= content_tag :p, link_to(program.xpath('title').inner_html, "https://catalog.gmu.edu/ribbit/?page=getprogram.rjs&code=#{code}") %>
+    <% code = program.attribute('code').value %>
+    <% unless codes.include?(code) %>
+      <% codes << code %>
+      <%= content_tag :p, link_to(program.xpath('title').inner_html.html_safe, "https://catalog.gmu.edu/ribbit/?page=getprogram.rjs&code=#{code}") %>
+    <% end %>
   <% end %>
+  <%#= codes %>
 </div>
