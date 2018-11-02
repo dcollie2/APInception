@@ -31,3 +31,4 @@
 
 # Ignore RubyMine
 !/.idea/*
+.idea/
