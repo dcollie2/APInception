@@ -1,3 +1,10 @@
 <h1>APInception</h1>
-<p>Find me in app/views/entrance/index.html.erb</p>
 <iframe src="https://giphy.com/embed/9mmWez1yhWNXO" width="480" height="201" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<div>
+  <% url = 'https://catalog.gmu.edu/ribbit/?page=getprogram.rjs&code=*' %>
+  <% response = Nokogiri::XML(open(url)) %>
+
+  <% response.xpath('programinfo/program/title').each do |program| %>
+    <%= content_tag :p, program.inner_html %>
+  <% end %>
+</div>
