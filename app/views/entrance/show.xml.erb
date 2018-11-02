@@ -1,0 +1,3 @@
+<% url = 'https://catalog.gmu.edu/ribbit/?page=getprogram.rjs&code=#{params(:id)}' %>
+<% response = Nokogiri::XML(open(url)) %>
+<%= response %>

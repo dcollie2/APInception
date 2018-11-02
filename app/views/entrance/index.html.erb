@@ -4,7 +4,8 @@
   <% url = 'https://catalog.gmu.edu/ribbit/?page=getprogram.rjs&code=*' %>
   <% response = Nokogiri::XML(open(url)) %>
 
-  <% response.xpath('programinfo/program/title').each do |program| %>
-    <%= content_tag :p, program.inner_html %>
+  <% response.xpath('programinfo/program').each do |program| %>
+    <% code = program.attribute('code') %>
+    <%= content_tag :p, link_to(program.xpath('title').inner_html, "https://catalog.gmu.edu/ribbit/?page=getprogram.rjs&code=#{code}") %>
   <% end %>
 </div>
