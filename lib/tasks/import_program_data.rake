@@ -27,19 +27,19 @@ namespace :import_program_data do
         code = program_xml.xpath('programinfo/program/customfields/code').first.content
         green_leaf_prog = program_xml.xpath('programinfo/program/customfields/green_leaf_prog').first.content
 
-        puts title
-        puts college
-        puts college_code
-        puts department
-        puts department_code
-        puts body
-        puts program_type
-        puts degree_type
-        puts program_title
-        puts schev_status
-        puts joint_program
-        puts code
-        puts green_leaf_prog
+        # puts title
+        # puts college
+        # puts college_code
+        # puts department
+        # puts department_code
+        # puts body
+        # puts program_type
+        # puts degree_type
+        # puts program_title
+        # puts schev_status
+        # puts joint_program
+        # puts code
+        # puts green_leaf_prog
 
         program = Program.find_or_create_by(code: code)
         program.update(title: title, college: college, college_code: college_code, department: department, department_code: department_code, body: body, program_type: program_type, degree_type: degree_type, program_title: program_title, schev_status: schev_status, joint_program: joint_program, code: code, green_leaf_prog: green_leaf_prog)
