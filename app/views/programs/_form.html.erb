@@ -1,0 +1,82 @@
+<%= form_with(model: program, local: true) do |form| %>
+  <% if program.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(program.errors.count, "error") %> prohibited this program from being saved:</h2>
+
+      <ul>
+      <% program.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :college_code %>
+    <%= form.text_field :college_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :department_code %>
+    <%= form.text_field :department_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div class="field">
+    <%= form.label :program_type %>
+    <%= form.text_field :program_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :degree_type %>
+    <%= form.text_field :degree_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :program_title %>
+    <%= form.text_field :program_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :schev_status %>
+    <%= form.text_field :schev_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :college %>
+    <%= form.text_field :college %>
+  </div>
+
+  <div class="field">
+    <%= form.label :department %>
+    <%= form.text_field :department %>
+  </div>
+
+  <div class="field">
+    <%= form.label :joint_program %>
+    <%= form.text_field :joint_program %>
+  </div>
+
+  <div class="field">
+    <%= form.label :code %>
+    <%= form.text_field :code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :green_leaf_prog %>
+    <%= form.text_field :green_leaf_prog %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

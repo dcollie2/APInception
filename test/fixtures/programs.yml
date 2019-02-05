@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  college_code: MyString
+  department_code: MyString
+  body: MyText
+  program_type: MyString
+  degree_type: 
+  program_title: MyString
+  schev_status: MyString
+  college: MyString
+  department: MyString
+  joint_program: MyString
+  code: MyString
+  green_leaf_prog: MyString
+
+two:
+  title: MyString
+  college_code: MyString
+  department_code: MyString
+  body: MyText
+  program_type: MyString
+  degree_type: 
+  program_title: MyString
+  schev_status: MyString
+  college: MyString
+  department: MyString
+  joint_program: MyString
+  code: MyString
+  green_leaf_prog: MyString
