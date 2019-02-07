@@ -2,8 +2,8 @@
 
 <h1>Programs</h1>
 
-    <% @programs.each do |program| %>
-        <p><%= link_to program.title, program %> (updated <%= program.updated_at %>)</p>
-    <% end %>
+  <% @programs.group_by(&:barebones_title).each do |barebones_title, programs| %>
+    <p><%= barebones_title %>, <% programs.each do |program| %><%= link_to program.interpreted_degree, program %><%= ', ' unless program == programs.last %><% end %></p>
+  <% end %>
 
 <br>
