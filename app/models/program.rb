@@ -1,7 +1,7 @@
 class Program < ApplicationRecord
 
   def barebones_title
-    title.sub(", #{degree_type}",'').sub(' Minor','').sub(' Graduate Certificate','').sub(' Undergraduate Certificate','')
+    title.sub(", #{degree_type}",'').sub(' Minor','').sub(' Graduate Certificate','').sub(' Undergraduate Certificate','').sub(', PhD', '').sub(', BSEd','')
   end
 
   def interpreted_degree
